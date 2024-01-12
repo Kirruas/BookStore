@@ -8,10 +8,14 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-
+BookAuthor.destroy_all
+BookAuthor.reset_pk_sequence
 
 Book.destroy_all
 Book.reset_pk_sequence
+
+Author.destroy_all
+Author.reset_pk_sequence
 
 Book.create(
     [
@@ -34,7 +38,61 @@ Book.create(
     {
         title: 'Le Proces',
         year: 1914
+    },
+    {
+        title: "L'origine des especes",
+        year: 1859
     }
     ]
 
+)
+
+
+Author.create(
+    [
+        {
+            name: 'Franz Kafka'
+        },
+        {
+            name: 'Rabelais'
+        },
+        {
+            name: 'Albert Camus'
+        },
+        {
+            name: 'Charles Darwin'
+        }
+
+
+    ]
+)
+
+
+BookAuthor.create(
+    [
+        {
+            book_id: 1,
+            author_id: 3
+        },
+        {
+            book_id: 2,
+            author_id: 1
+        },
+        {
+            book_id: 3,
+            author_id: 2
+        },
+        {
+            book_id: 4,
+            author_id: 3
+        },
+        {
+            book_id: 5,
+            author_id: 1
+        },
+        {
+            book_id: 6,
+            author_id: 4
+        }
+    ]
 )
