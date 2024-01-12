@@ -11,6 +11,12 @@
 BookAuthor.destroy_all
 BookAuthor.reset_pk_sequence
 
+BookCategroy.destroy_all
+BookCategroy.reset_pk_sequence
+
+Category.destroy_all
+Category.reset_pk_sequence
+
 Book.destroy_all
 Book.reset_pk_sequence
 
@@ -94,5 +100,67 @@ BookAuthor.create(
             book_id: 6,
             author_id: 4
         }
+    ]
+)
+
+
+Category.create(
+    [
+        {
+            name: 'Fiction'
+        },
+        {
+            name: 'Horreur'
+        },
+        {
+            name: 'Fantaisie'
+        },
+        {
+            name: 'Roman'
+        },
+        {
+            name: 'Philosphie'
+        },
+        {
+            name: 'Science'
+        }
+    ]
+)
+
+BookCategroy.create(
+    [
+        {
+            book_id: 1,
+            category_id: 5
+        },
+        {
+            book_id: 1,
+            category_id: 4
+        },
+        {
+            book_id: 2,
+            category_id: 4
+        },
+        {
+            book_id: 2,
+            category_id: 5
+        },
+        {
+            book_id: 3,
+            category_id: 4
+        },
+        {
+            book_id: 4,
+            category_id: 4
+        },
+        {
+            book_id: 5,
+            category_id: 4
+        },
+        {
+            book_id: 6,
+            category_id: 6
+        },
+        
     ]
 )
