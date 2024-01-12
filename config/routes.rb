@@ -9,4 +9,11 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "/books", to: "books#get_all_books"
   get "/books/:id", to: "books#get_book_by_id"
+
+  get "/Author", to: "author#get_all_authors"
+  get "/Author/:id", to: "author#get_author_by_id"
+
+  get "/Category", to: "categories#get_all_categories"
+  get "/Category/:id", to: "categories#get_category_by_id"
+
 end
