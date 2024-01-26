@@ -9,4 +9,19 @@ class BooksController < ApplicationController
         render json: {"data": @book }, include: [:authors, :categories]
     end
 
+    def add_book
+        if user_signed_in?
+            Book.create([
+                {
+                    title: params[:books][:title],
+                    year: params[:books][:year]
+                }
+            ])
+            render json: {"title": "#{params[:books][:title]}", "year": "#{params[:books][:year]}"}
+           
+        else 
+            render json: {"data": "not logged in"}
+        end
+    end
+
 end
